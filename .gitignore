@@ -1,0 +1,37 @@
+JuegoSerioIIB/Library/
+JuegoSerioIIB/Temp/
+JuegoSerioIIB/obj/
+JuegoSerioIIB/[Bb]uild/
+JuegoSerioIIB/[Bb]uilds/
+JuegoSerioIIB/Logs/
+JuegoSerioIIB/.vs/
+JuegoSerioIIB/[Uu]ser[Ss]ettings/
+
+JuegoSerioIIB/*.csproj
+JuegoSerioIIB/*.unityproj
+JuegoSerioIIB/*.sln
+JuegoSerioIIB/*.suo
+JuegoSerioIIB/*.tmp
+JuegoSerioIIB/*.user
+JuegoSerioIIB/*.userprefs
+JuegoSerioIIB/*.pidb
+JuegoSerioIIB/*.booproj
+JuegoSerioIIB/*.svd
+JuegoSerioIIB/*.pdb
+JuegoSerioIIB/*.mdb
+JuegoSerioIIB/*.opendb
+JuegoSerioIIB/*.VC.db
+
+# Unity3D generated meta files
+JuegoSerioIIB/*.pidb.meta
+JuegoSerioIIB/*.pdb.meta
+JuegoSerioIIB/*.mdb.meta
+
+# Unity3D generated file on crash reports
+JuegoSerioIIB/sysinfo.txt
+
+# Builds
+JuegoSerioIIB/*.apk
+JuegoSerioIIB/*.aab
+JuegoSerioIIB/*.unitypackage
+JuegoSerioIIB/*.app
