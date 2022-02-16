@@ -37,6 +37,8 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\GestionadorDeEscenas.cs" />
+     <Compile Include="Assets\Scripts\Asignador.cs" />
+     <Compile Include="Assets\Scripts\GestionadorDeJuego.cs" />
      <None Include="Assets\TQGAssets\Resources\XML\CategoryPlacesXML.xml" />
      <None Include="Assets\TQGAssets\Resources\XML\GameImageAnswersXML.xml" />
      <None Include="Assets\TQGAssets\Resources\XML\GameTrueFalse.xml" />
