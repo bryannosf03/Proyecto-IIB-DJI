@@ -36,27 +36,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\TQGGameController.cs" />
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\TQGCategoryGrid.cs" />
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\TQGCategorySelector.cs" />
-     <Compile Include="Assets\TQGAssets\TwoArrays.cs" />
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\TQGPause.cs" />
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\TQGPlaySound.cs" />
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\TQGShareByMail.cs" />
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\TQGToggleSound.cs" />
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\TQGAnimateUI.cs" />
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\TQGDynamicGrid.cs" />
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\TQGGlobalMusic.cs" />
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\Types\Question.cs" />
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\Types\Answer.cs" />
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\TQGAnimateColors.cs" />
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\TQGDynamicXML.cs" />
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\Types\Category.cs" />
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\TQGSelectButton.cs" />
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\TQGLoadLevel.cs" />
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\Types\Player.cs" />
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\Types\CategoryMath.cs" />
-     <Compile Include="Assets\TQGAssets\CS_Assets\CS_Scripts\Types\Unlockable.cs" />
+     <Compile Include="Assets\Scripts\GestionadorDeEscenas.cs" />
+     <Compile Include="Assets\Scripts\Asignador.cs" />
+     <Compile Include="Assets\Scripts\GestionadorDeJuego.cs" />
      <None Include="Assets\TQGAssets\Resources\XML\CategoryPlacesXML.xml" />
      <None Include="Assets\TQGAssets\Resources\XML\GameImageAnswersXML.xml" />
      <None Include="Assets\TQGAssets\Resources\XML\GameTrueFalse.xml" />
@@ -65,7 +47,6 @@
      <None Include="Assets\TQGAssets\Resources\XML\OnlineXML.xml" />
      <None Include="Assets\TQGAssets\Resources\XML\CategoryUnityXML.xml" />
      <None Include="Assets\TQGAssets\Resources\XML\GameSoundQuestionsXML.xml" />
-     <None Include="Assets\unity3d.txt" />
      <None Include="Assets\TQGAssets\Resources\XML\CloseupXML.xml" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -290,7 +271,7 @@
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.23f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -638,97 +619,101 @@
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.23f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Editor">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.PixelPerfect">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
     </Reference>
     <Reference Include="PsdPlugin">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.IK.Editor">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Psdimporter.Editor">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Path.Editor">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.IK.Runtime">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Triangle.Runtime">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.PixelPerfect.Editor">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Runtime">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Editor">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
-        <HintPath>F:\Uni\Juegos interactivos\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
+        <HintPath>C:\Users\franc\Documents\GitHub\Proyecto-IIB-DJI\JuegoSerioIIB\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.2D.Tilemap.Editor.csproj">
+      <Project>{c7db0c30-bcfd-3e99-7ce3-611ab35f2e05}</Project>
+      <Name>Unity.2D.Tilemap.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
+      <Project>{192d7cbb-031c-888a-e8e9-0f12f1dc1107}</Project>
+      <Name>Unity.2D.Sprite.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{921bbc3e-5f36-a5b4-083e-3c86beec9e09}</Project>
+      <Name>UnityEditor.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{74a4255a-b10c-a430-78d2-dccf14920cf3}</Project>
+      <Name>UnityEngine.UI</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
