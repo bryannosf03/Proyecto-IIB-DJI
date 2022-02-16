@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 
 
+
 public class GestionadorDeJuego : MonoBehaviour
 {
     public Sprite bandera;
@@ -69,13 +70,31 @@ public class GestionadorDeJuego : MonoBehaviour
 
         int paisAleatorio =  Random.Range(0,Continentes.America.Length);
 
-        opciones[0]=Continentes.America[paisAleatorio]; 
+        int [] opcionesNumeros = new int[4];
+        int numeroOpcionCorrecta =0;
 
-        opciones[1]=Continentes.America[paisAleatorio];
+        for(int i=0;i<Continentes.America.Length;i++){
+            if(Continentes.America[i].Equals(opcionCorrecta)){
+                numeroOpcionCorrecta=i;
+            }
+        }
 
-        opciones[2]=Continentes.America[paisAleatorio];
+        opcionesNumeros[0]=numeroOpcionCorrecta;
+        for(int j=1;j<4;j++){
+            int randomico = Random.Range(0,Continentes.America.Length);
+            opcionesNumeros[j]= randomico;
+        }
 
-        opciones[3]=Continentes.America[paisAleatorio];
+        int l = 0;
+        opcionesNumeros= Shuffle(opcionesNumeros,l);
+        
+        opciones[0]=Continentes.America[opcionesNumeros[0]]; 
+
+        opciones[1]=Continentes.America[opcionesNumeros[1]];
+
+        opciones[2]=Continentes.America[opcionesNumeros[2]];
+
+        opciones[3]=Continentes.America[opcionesNumeros[3]];
 
         return opciones;
 
@@ -83,6 +102,17 @@ public class GestionadorDeJuego : MonoBehaviour
     //cada que selecciona verificar si es correcta o incorrecta
     public void verificarRespuesta(string respuesta){
 
+    }
+
+    public int[] Shuffle(int[] decklist, int tempGO) {
+         for (int i = 0; i < decklist.Length; i++) {
+             int rnd = Random.Range(0, decklist.Length);
+             tempGO = decklist[rnd];
+             decklist[rnd] = decklist[i];
+             decklist[i] = tempGO;
+         }
+
+         return decklist;
     }
 
 }
