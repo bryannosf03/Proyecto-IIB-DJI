@@ -47,6 +47,9 @@ public class GestionadorDeJuego : MonoBehaviour
         Asignador.Instancia.mostrarOpciones(opciones);
     }
 
+    public void finalizarJuego(){
+        //TODO mostrar tabla de puntajes
+    }
     //leer sprites(banderas) de la carpeta de assets según el nivel
     public void obtenerBandera()
     {
@@ -109,7 +112,7 @@ public class GestionadorDeJuego : MonoBehaviour
             
         }while(flag);
         //Debug.Log(indicesDeOpciones[0]+"-"+indicesDeOpciones[1]+"-"+indicesDeOpciones[2]+"-"+indicesDeOpciones[3]);
-        indicesDeOpciones = Barajar(indicesDeOpciones, 0);
+        indicesDeOpciones = BarajarOrdenDeArray(indicesDeOpciones, 0);
 
         opciones[0] = nivelActual[indicesDeOpciones[0]];
         opciones[1] = nivelActual[indicesDeOpciones[1]];
@@ -123,13 +126,41 @@ public class GestionadorDeJuego : MonoBehaviour
     //cada que selecciona verificar si es correcta o incorrecta
     public void verificarRespuesta(Text respuesta)
     {
-        if (respuesta.text.Equals(opcionCorrecta[0]))
-        {
-            inicializarJuego();
+        //verifico  el número de preguntas
+        if(ControladorDePuntaje.preguntasRespondidas<ControladorDePuntaje.numeroDePreguntasTotal)
+        {    
+            if (respuesta.text.Equals(opcionCorrecta[0]))
+            {
+                ControladorDePuntaje.Instancia.puntuarRespuestaCorrecta();
+                Asignador.Instancia.mostrarPreguntasRespondidas(ControladorDePuntaje.Instancia.textoNumeroDePreguntas);
+                inicializarJuego();
+            }
+            else{
+                ControladorDePuntaje.Instancia.puntuarRespuestaIncorrecta();
+                Asignador.Instancia.mostrarPreguntasRespondidas(ControladorDePuntaje.Instancia.textoNumeroDePreguntas);
+                inicializarJuego();
+            }
         }
+        else if(ControladorDePuntaje.preguntasRespondidas==ControladorDePuntaje.numeroDePreguntasTotal)
+        {    
+            if (respuesta.text.Equals(opcionCorrecta[0]))
+            {
+                ControladorDePuntaje.Instancia.puntuarRespuestaCorrecta();
+                finalizarJuego();
+            }
+            else{
+                ControladorDePuntaje.Instancia.puntuarRespuestaIncorrecta();
+                finalizarJuego();
+            }
+        }
+        else{
+            finalizarJuego();
+        }
+        
     }
 
-    public int[] Barajar(int[] listaABarajar, int tempGO)
+    //retornar array randomizado
+    public int[] BarajarOrdenDeArray(int[] listaABarajar, int tempGO)
     {
         for (int i = 0; i < listaABarajar.Length; i++)
         {

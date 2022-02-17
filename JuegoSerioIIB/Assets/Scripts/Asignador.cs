@@ -37,8 +37,11 @@ public class Asignador : MonoBehaviour
         
     }
 
-    //retornar array randomizado
-    public void randomizarOrdenDeArray(string[] opciones){
-        //TO DO:randomizar Orden De Array 
+    public void mostrarPuntaje(Text textPuntaje){
+        textPuntaje.text = ControladorDePuntaje.puntajeActual+"";
+    }
+
+    public void mostrarPreguntasRespondidas(Text textPreguntasRespondidas){
+        textPreguntasRespondidas.text = ControladorDePuntaje.preguntasRespondidas + "/"+ ControladorDePuntaje.numeroDePreguntasTotal;
     }
 }
