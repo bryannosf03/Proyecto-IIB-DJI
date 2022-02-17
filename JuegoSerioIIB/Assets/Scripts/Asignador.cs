@@ -34,6 +34,7 @@ public class Asignador : MonoBehaviour
     //gameobject donde cambiaremos la imágen y la imagen de la bandera a cambiar
     public void mostrarBandera(Image imagenUI, Sprite banderaACambiar){
         imagenUI.sprite = banderaACambiar;
+        
     }
 
     //retornar array randomizado
