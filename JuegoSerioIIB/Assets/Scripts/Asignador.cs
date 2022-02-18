@@ -13,8 +13,7 @@ public class Asignador : MonoBehaviour
     //creo una instacia singleton
     public static Asignador Instancia;
     
-    void Start()
-    {
+    void Start(){
         Instancia=this;
         boton1 = GameObject.Find("Opcion1");
         boton2 = GameObject.Find("Opcion2");
@@ -34,7 +33,6 @@ public class Asignador : MonoBehaviour
     //gameobject donde cambiaremos la imágen y la imagen de la bandera a cambiar
     public void mostrarBandera(Image imagenUI, Sprite banderaACambiar){
         imagenUI.sprite = banderaACambiar;
-        
     }
 
     public void mostrarPuntaje(Text textPuntaje){
@@ -43,5 +41,9 @@ public class Asignador : MonoBehaviour
 
     public void mostrarPreguntasRespondidas(Text textPreguntasRespondidas){
         textPreguntasRespondidas.text = ControladorDePuntaje.preguntasRespondidas + "/"+ ControladorDePuntaje.numeroDePreguntasTotal;
+    }
+    
+    public void mostrarPreguntasRespondidasSinTotal(Text textPreguntasRespondidas){
+        textPreguntasRespondidas.text = ""+ControladorDePuntaje.preguntasRespondidas;
     }
 }

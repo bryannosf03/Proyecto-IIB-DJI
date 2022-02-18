@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class GestionadorDeJuego : MonoBehaviour
+public class GestionadorDeJuegoCronometrado : MonoBehaviour
 {
     public Image imagen;
 
@@ -16,26 +16,7 @@ public class GestionadorDeJuego : MonoBehaviour
 
     void Start()
     {
-       switch (Continentes.nivelSeleccionado) {
-            case 0:
-               nivelActual=Continentes.America;
-               break;
-            case 1:
-               nivelActual=Continentes.Europa;
-               break;
-            case 2:
-               nivelActual=Continentes.Asia;
-               break;
-            case 3:
-               nivelActual=Continentes.Africa;
-               break;
-            case 4:
-               nivelActual=Continentes.Oceania;
-               break;
-           default :
-               nivelActual=Continentes.Oceania;
-               break;
-       }
+        nivelActual = Continentes.America;
         inicializarJuego();
     }
 
@@ -47,7 +28,8 @@ public class GestionadorDeJuego : MonoBehaviour
         Asignador.Instancia.mostrarOpciones(opciones);
     }
 
-    public void finalizarJuego(){
+    public void finalizarJuego()
+    {
         //TODO mostrar tabla de puntajes
     }
     //leer sprites(banderas) de la carpeta de assets según el nivel
@@ -82,35 +64,40 @@ public class GestionadorDeJuego : MonoBehaviour
         indicesDeOpciones[0] = int.Parse(opcionCorrecta[1]);
 
         bool flag = false;
-        int indiceAuxiliar=1;
+        int indiceAuxiliar = 1;
         int randomicoAuxiliar;
-        do{
+        do
+        {
             randomicoAuxiliar = Random.Range(0, nivelActual.Length);
 
             //verifico que no se repita en todo el arreglo
-            for (int j = 0; j < 4; j++){
-                if(randomicoAuxiliar==indicesDeOpciones[j]){//si se repite cambio la flag a false y salgo
+            for (int j = 0; j < 4; j++)
+            {
+                if (randomicoAuxiliar == indicesDeOpciones[j])
+                {//si se repite cambio la flag a false y salgo
                     flag = true;
                     //Debug.Log("Igual" +randomicoAuxiliar+" - indice "+flag);
                     break;
                 }
                 else //por el contrario la mantengo en verdadera
                     flag = false;
-                
+
             }
 
             //Debug.Log(indiceAuxiliar);
-            if(indiceAuxiliar<4 & !flag){
-                flag=true;
+            if (indiceAuxiliar < 4 & !flag)
+            {
+                flag = true;
                 //solo si pasó sin novedades, entonces asigno y continuamos con el siguiente índice
-                if(flag){
+                if (flag)
+                {
                     //Debug.Log("indice" +indiceAuxiliar+" - indice "+flag);
-                    indicesDeOpciones[indiceAuxiliar]=randomicoAuxiliar;
+                    indicesDeOpciones[indiceAuxiliar] = randomicoAuxiliar;
                     indiceAuxiliar++;
                 }
             }
-            
-        }while(flag);
+
+        } while (flag);
         //Debug.Log(indicesDeOpciones[0]+"-"+indicesDeOpciones[1]+"-"+indicesDeOpciones[2]+"-"+indicesDeOpciones[3]);
         indicesDeOpciones = BarajarOrdenDeArray(indicesDeOpciones, 0);
 
@@ -126,37 +113,23 @@ public class GestionadorDeJuego : MonoBehaviour
     //cada que selecciona verificar si es correcta o incorrecta
     public void verificarRespuesta(Text respuesta)
     {
-        //verifico  el número de preguntas
-        if(ControladorDePuntaje.preguntasRespondidas<ControladorDePuntaje.numeroDePreguntasTotal)
-        {    
-            if (respuesta.text.Equals(opcionCorrecta[0]))
-            {
-                ControladorDePuntaje.Instancia.puntuarRespuestaCorrecta();
-                Asignador.Instancia.mostrarPreguntasRespondidas(ControladorDePuntaje.Instancia.textoNumeroDePreguntas);
-                inicializarJuego();
-            }
-            else{
-                ControladorDePuntaje.Instancia.puntuarRespuestaIncorrecta();
-                Asignador.Instancia.mostrarPreguntasRespondidas(ControladorDePuntaje.Instancia.textoNumeroDePreguntas);
-                inicializarJuego();
-            }
+
+        if (respuesta.text.Equals(opcionCorrecta[0]))
+        {
+            ControladorDePuntaje.Instancia.puntuarRespuestaCorrecta();
+            Asignador.Instancia.mostrarPreguntasRespondidasSinTotal(ControladorDePuntaje.Instancia.textoNumeroDePreguntas);
+            Tiempo.Instancia.aumentarTiempo(3.0f);//aumentamos el tiempo
+            inicializarJuego();
+
         }
-        else if(ControladorDePuntaje.preguntasRespondidas==ControladorDePuntaje.numeroDePreguntasTotal)
-        {    
-            if (respuesta.text.Equals(opcionCorrecta[0]))
-            {
-                ControladorDePuntaje.Instancia.puntuarRespuestaCorrecta();
-                finalizarJuego();
-            }
-            else{
-                ControladorDePuntaje.Instancia.puntuarRespuestaIncorrecta();
-                finalizarJuego();
-            }
+        else
+        {
+            ControladorDePuntaje.Instancia.puntuarRespuestaIncorrecta();
+            Asignador.Instancia.mostrarPreguntasRespondidasSinTotal(ControladorDePuntaje.Instancia.textoNumeroDePreguntas);
+            inicializarJuego();
         }
-        else{
-            finalizarJuego();
-        }
-        
+
+
     }
 
     //retornar array randomizado

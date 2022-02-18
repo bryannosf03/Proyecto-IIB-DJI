@@ -55,7 +55,7 @@ public class Continentes : MonoBehaviour
         "Siria",
         "Tayikistán",
         "Tailandia",
-        "Pavo",
+        "Turquía",
         "Turkmenistán",
         "Emiratos Árabes Unidos",
         "Uzbekistán",
@@ -261,4 +261,5 @@ public class Continentes : MonoBehaviour
         "Wallis y Futuna"
     };
     
+    public static string[] mundo = {};
 }

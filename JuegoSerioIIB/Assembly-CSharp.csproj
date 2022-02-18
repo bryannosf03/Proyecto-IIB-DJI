@@ -37,10 +37,13 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Continentes.cs" />
-     <Compile Include="Assets\Scripts\GestionadorDeEscenas.cs" />
-     <Compile Include="Assets\Scripts\GestionadorDeJuego.cs" />
-     <Compile Include="Assets\Scripts\Asignador.cs" />
      <Compile Include="Assets\Scripts\ControladorDePuntaje.cs" />
+     <Compile Include="Assets\Scripts\Tiempo.cs" />
+     <Compile Include="Assets\Scripts\GestionadorDeJuegoNormal.cs" />
+     <Compile Include="Assets\Scripts\GestionadorDeEscenas.cs" />
+     <Compile Include="Assets\Scripts\GestionadorDeJuegoCronometrado.cs" />
+     <Compile Include="Assets\Scripts\Asignador.cs" />
+     <Compile Include="Assets\Scripts\UsuarioActual.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TQGAssets\Resources\XML\CategoryPlacesXML.xml" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
