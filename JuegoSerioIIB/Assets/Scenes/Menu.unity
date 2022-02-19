@@ -185,6 +185,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -217,6 +218,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1603556539}
   m_RootOrder: 0
@@ -349,6 +351,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -367,6 +370,7 @@ GameObject:
   - component: {fileID: 586347321}
   - component: {fileID: 586347320}
   - component: {fileID: 586347319}
+  - component: {fileID: 586347325}
   m_Layer: 5
   m_Name: CanvasMenu
   m_TagString: Untagged
@@ -483,6 +487,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2124623438}
   - {fileID: 1720168455}
@@ -496,6 +501,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &586347325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586347318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5c281f769b7384d9916329571ed292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &614726043
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +525,6 @@ GameObject:
   - component: {fileID: 614726047}
   - component: {fileID: 614726046}
   - component: {fileID: 614726045}
-  - component: {fileID: 614726048}
   m_Layer: 5
   m_Name: BotonCronometro
   m_TagString: Untagged
@@ -526,6 +542,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1611713758}
   m_Father: {fileID: 586347324}
@@ -580,7 +597,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1603556543}
+      - m_Target: {fileID: 586347325}
         m_TargetAssemblyTypeName: GestionadorDeEscenas, Assembly-CSharp
         m_MethodName: cargarEscena
         m_Mode: 5
@@ -630,18 +647,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614726043}
   m_CullTransparentMesh: 1
---- !u!114 &614726048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614726043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d5c281f769b7384d9916329571ed292, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1603556538
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,7 +659,6 @@ GameObject:
   - component: {fileID: 1603556542}
   - component: {fileID: 1603556541}
   - component: {fileID: 1603556540}
-  - component: {fileID: 1603556543}
   m_Layer: 5
   m_Name: BotonNormal
   m_TagString: Untagged
@@ -672,6 +676,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 63408374}
   m_Father: {fileID: 586347324}
@@ -726,7 +731,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1603556543}
+      - m_Target: {fileID: 586347325}
         m_TargetAssemblyTypeName: GestionadorDeEscenas, Assembly-CSharp
         m_MethodName: cargarEscena
         m_Mode: 5
@@ -776,18 +781,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603556538}
   m_CullTransparentMesh: 1
---- !u!114 &1603556543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603556538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d5c281f769b7384d9916329571ed292, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1611713757
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,6 +809,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 614726044}
   m_RootOrder: 0
@@ -895,6 +889,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 586347324}
   m_RootOrder: 1
@@ -974,6 +969,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 586347324}
   m_RootOrder: 0
