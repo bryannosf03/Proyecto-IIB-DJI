@@ -13,7 +13,8 @@ public class Asignador : MonoBehaviour
     //creo una instacia singleton
     public static Asignador Instancia;
     
-    void Start(){
+    void Start()
+    {
         Instancia=this;
         boton1 = GameObject.Find("Opcion1");
         boton2 = GameObject.Find("Opcion2");
@@ -35,15 +36,8 @@ public class Asignador : MonoBehaviour
         imagenUI.sprite = banderaACambiar;
     }
 
-    public void mostrarPuntaje(Text textPuntaje){
-        textPuntaje.text = ControladorDePuntaje.puntajeActual+"";
-    }
-
-    public void mostrarPreguntasRespondidas(Text textPreguntasRespondidas){
-        textPreguntasRespondidas.text = ControladorDePuntaje.preguntasRespondidas + "/"+ ControladorDePuntaje.numeroDePreguntasTotal;
-    }
-    
-    public void mostrarPreguntasRespondidasSinTotal(Text textPreguntasRespondidas){
-        textPreguntasRespondidas.text = ""+ControladorDePuntaje.preguntasRespondidas;
+    //retornar array randomizado
+    public void randomizarOrdenDeArray(string[] opciones){
+        //TO DO:randomizar Orden De Array 
     }
 }
