@@ -6,12 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Login.unity
+    guid: 8d64256a0f8ad8b4c963a820cbd920e0
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/ModoContrareloj.unity
+    guid: 7f0d8e789d6d2154dac2822b177e5692
+  - enabled: 1
+    path: Assets/Scenes/ModoNormal.unity
+    guid: 584f0b7aceb49524cac0357393f5e35d
   - enabled: 1
     path: Assets/Scenes/ModoNormalNiveles.unity
     guid: ff638b44c85c41d44b8996c36808d939
   - enabled: 1
-    path: Assets/Scenes/ModoContrareloj.unity
-    guid: 7f0d8e789d6d2154dac2822b177e5692
+    path: Assets/Scenes/TablaDePuntajes.unity
+    guid: 5e3eccef5ec2c234fa8b4a7581805247
   m_configObjects: {}
