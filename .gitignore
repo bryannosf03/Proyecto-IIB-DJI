@@ -1,16 +1,11 @@
-JuegoSerioIIB/[Ll]ibrary/
+JuegoSerioIIB/Library/
 JuegoSerioIIB/Temp/
-JuegoSerioIIB/[Oo]bj/
+JuegoSerioIIB/obj/
 JuegoSerioIIB/[Bb]uild/
 JuegoSerioIIB/[Bb]uilds/
-JuegoSerioIIB/[Ll]ogs/
+JuegoSerioIIB/Logs/
 JuegoSerioIIB/.vs/
 JuegoSerioIIB/[Uu]ser[Ss]ettings/
-
-
-JuegoSerioIIB/[Mm]emoryCaptures/
-JuegoSerioIIB/[Rr]ecordings/
-JuegoSerioIIB/[Aa]ssets/AssetStoreTools*
 
 JuegoSerioIIB/*.csproj
 JuegoSerioIIB/*.unityproj
@@ -40,13 +35,3 @@ JuegoSerioIIB/*.apk
 JuegoSerioIIB/*.aab
 JuegoSerioIIB/*.unitypackage
 JuegoSerioIIB/*.app
-
-# Crashlytics generated file
-crashlytics-build.properties
-
-# Packed Addressables
-JuegoSerioIIB/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
-
-# Temporary auto-generated Android Assets
-JuegoSerioIIB/[Aa]ssets/[Ss]treamingAssets/aa.meta
-JuegoSerioIIB/[Aa]ssets/[Ss]treamingAssets/aa/*
