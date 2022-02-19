@@ -16,7 +16,7 @@ public class GestionadorDeJuegoCronometrado : MonoBehaviour
 
     void Start()
     {
-        nivelActual = Continentes.America;
+        nivelActual = Continentes.Mundo;
         inicializarJuego();
     }
 

@@ -290,7 +290,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1747331671}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GestionadorDeJuego, Assembly-CSharp
         m_MethodName: inicializarJuego
         m_Mode: 1
@@ -660,7 +660,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1747331671}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GestionadorDeJuego, Assembly-CSharp
         m_MethodName: verificarRespuesta
         m_Mode: 2
@@ -958,7 +958,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1747331671}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GestionadorDeJuego, Assembly-CSharp
         m_MethodName: verificarRespuesta
         m_Mode: 2
@@ -1092,7 +1092,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1747331671}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GestionadorDeJuego, Assembly-CSharp
         m_MethodName: verificarRespuesta
         m_Mode: 2
@@ -1411,7 +1411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1747331670}
   - component: {fileID: 1747331669}
-  - component: {fileID: 1747331671}
+  - component: {fileID: 1747331673}
   - component: {fileID: 1747331672}
   m_Layer: 0
   m_Name: GestionadorDeJuego
@@ -1447,20 +1447,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1747331671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747331668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42c3854edac01334ab38fd35af186b93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imagen: {fileID: 172118522}
-  spriteRenderer: {fileID: 1747331672}
 --- !u!212 &1747331672
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1513,6 +1499,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1747331673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747331668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2026761669c65454fb2c98323e7e183e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagen: {fileID: 172118522}
+  spriteRenderer: {fileID: 1747331672}
 --- !u!1 &1760485997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,7 +1950,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1747331671}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GestionadorDeJuego, Assembly-CSharp
         m_MethodName: verificarRespuesta
         m_Mode: 2
