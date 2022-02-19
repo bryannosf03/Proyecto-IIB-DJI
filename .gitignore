@@ -1,0 +1,52 @@
+JuegoSerioIIB/[Ll]ibrary/
+JuegoSerioIIB/Temp/
+JuegoSerioIIB/[Oo]bj/
+JuegoSerioIIB/[Bb]uild/
+JuegoSerioIIB/[Bb]uilds/
+JuegoSerioIIB/[Ll]ogs/
+JuegoSerioIIB/.vs/
+JuegoSerioIIB/[Uu]ser[Ss]ettings/
+
+
+JuegoSerioIIB/[Mm]emoryCaptures/
+JuegoSerioIIB/[Rr]ecordings/
+JuegoSerioIIB/[Aa]ssets/AssetStoreTools*
+
+JuegoSerioIIB/*.csproj
+JuegoSerioIIB/*.unityproj
+JuegoSerioIIB/*.sln
+JuegoSerioIIB/*.suo
+JuegoSerioIIB/*.tmp
+JuegoSerioIIB/*.user
+JuegoSerioIIB/*.userprefs
+JuegoSerioIIB/*.pidb
+JuegoSerioIIB/*.booproj
+JuegoSerioIIB/*.svd
+JuegoSerioIIB/*.pdb
+JuegoSerioIIB/*.mdb
+JuegoSerioIIB/*.opendb
+JuegoSerioIIB/*.VC.db
+
+# Unity3D generated meta files
+JuegoSerioIIB/*.pidb.meta
+JuegoSerioIIB/*.pdb.meta
+JuegoSerioIIB/*.mdb.meta
+
+# Unity3D generated file on crash reports
+JuegoSerioIIB/sysinfo.txt
+
+# Builds
+JuegoSerioIIB/*.apk
+JuegoSerioIIB/*.aab
+JuegoSerioIIB/*.unitypackage
+JuegoSerioIIB/*.app
+
+# Crashlytics generated file
+crashlytics-build.properties
+
+# Packed Addressables
+JuegoSerioIIB/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+
+# Temporary auto-generated Android Assets
+JuegoSerioIIB/[Aa]ssets/[Ss]treamingAssets/aa.meta
+JuegoSerioIIB/[Aa]ssets/[Ss]treamingAssets/aa/*
