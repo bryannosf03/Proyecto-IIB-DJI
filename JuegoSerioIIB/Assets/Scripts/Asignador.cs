@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class Asignador : MonoBehaviour
 {
-    GameObject boton1;
-    GameObject boton2;
-    GameObject boton3;
-    GameObject boton4;
+    public GameObject boton1;
+    public GameObject boton2;
+    public GameObject boton3;
+    public GameObject boton4;
 
     //creo una instacia singleton
     public static Asignador Instancia;
@@ -29,6 +29,10 @@ public class Asignador : MonoBehaviour
         boton4.GetComponentInChildren<Text>().text = opciones[3];
     }
 
+    public void mostrarOpcion(GameObject boton,string opcion){
+        boton.GetComponentInChildren<Text>().text = opcion;
+    }
+
     //método para cambiar la imágen
     //gameobject donde cambiaremos la imágen y la imagen de la bandera a cambiar
     public void mostrarBandera(Image imagenUI, Sprite banderaACambiar){
@@ -37,6 +41,11 @@ public class Asignador : MonoBehaviour
 
     public void mostrarPuntaje(Text textPuntaje){
         textPuntaje.text = ControladorDePuntaje.puntajeActual+"";
+    }
+
+    public void mostrarPowerUp(GameObject powerUp, Sprite imagenACambiar){
+        powerUp.SetActive(true);
+        powerUp.GetComponent<Image>().sprite = imagenACambiar;
     }
 
     public void mostrarPreguntasRespondidas(Text textPreguntasRespondidas){

@@ -14,9 +14,12 @@ public class GestionadorDeJuegoNormal : MonoBehaviour
 
     private string[] nivelActual;
 
-    void Start()
-    {
-       switch (Continentes.nivelSeleccionado) {
+    //creo una instacia singleton
+    public static GestionadorDeJuegoNormal Instancia;
+        
+    void Start(){
+        Instancia=this;
+        switch (Continentes.nivelSeleccionado) {
             case 0:
                nivelActual=Continentes.America;
                break;
@@ -48,17 +51,12 @@ public class GestionadorDeJuegoNormal : MonoBehaviour
     }
 
     public void finalizarJuego(){
+        ControladorDePuntaje.Instancia.activarPowerUp();
         //TODO mostrar tabla de puntajes
     }
     //leer sprites(banderas) de la carpeta de assets según el nivel
     public void obtenerBandera()
     {
-        /*
-        1.Tomar un país del array creado
-        2.Encontrar el sprite con ese nombre
-        3.Asignarle opcion correcta
-        4.Llamarle al mostrar bandera
-        */
 
         int paisAleatorio = Random.Range(0, nivelActual.Length);
         string pais = nivelActual[paisAleatorio]; //AQUÍ DEBEN IR LOS PAISES
@@ -171,6 +169,10 @@ public class GestionadorDeJuegoNormal : MonoBehaviour
         }
 
         return listaABarajar;
+    }
+
+    public string[] getOpcionCorrecta(){
+        return opcionCorrecta;
     }
 
 }
