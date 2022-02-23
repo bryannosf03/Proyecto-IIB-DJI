@@ -75,12 +75,15 @@ public class ControladorDePuntaje : MonoBehaviour
 
     //de manera randómica nos devuelve un power up
     public void getPowerUp(){
+        int numeroRandomico;
         if(GestionadorDeEscenas.Instancia.getEscena().Equals("ModoContrareloj")){//verifico en que escena estoy
             string[] powerUps = {"PU5050","PUDoblePuntos","PUEliminar","PUMas10"};
-            powerUpActual=powerUps[Random.Range(0, 3)];
+            numeroRandomico = Random.Range(0, 4);
+            powerUpActual=powerUps[numeroRandomico];
         }else{
             string[] powerUps = {"PU5050","PUDoblePuntos","PUEliminar"};
-            powerUpActual=powerUps[Random.Range(0, 2)];
+            numeroRandomico = Random.Range(0, 3);
+            powerUpActual=powerUps[numeroRandomico];
         }
     }
 
@@ -169,6 +172,8 @@ public class ControladorDePuntaje : MonoBehaviour
     //Eliminar una pregunta incorrecta y añadir una nueva
     public void powerUpEliminar() {
         preguntasRespondidas--;
+        puntajeActual=puntajeActual+4;
+        Asignador.Instancia.mostrarPuntaje(textoPuntaje);
         if(GestionadorDeEscenas.Instancia.getEscena().Equals("ModoContrareloj")){
             Asignador.Instancia.mostrarPreguntasRespondidasSinTotal(textoNumeroDePreguntas);
         }else{
