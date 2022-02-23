@@ -14,8 +14,11 @@ public class GestionadorDeJuegoCronometrado : MonoBehaviour
 
     private string[] nivelActual;
 
-    void Start()
-    {
+    //creo una instacia singleton
+    public static GestionadorDeJuegoCronometrado Instancia;
+    
+    void Start(){
+        Instancia=this;
         nivelActual = Continentes.Mundo;
         inicializarJuego();
     }
@@ -30,6 +33,7 @@ public class GestionadorDeJuegoCronometrado : MonoBehaviour
 
     public void finalizarJuego()
     {
+        ControladorDePuntaje.Instancia.activarPowerUp();
         //TODO mostrar tabla de puntajes
     }
     //leer sprites(banderas) de la carpeta de assets según el nivel
@@ -144,6 +148,10 @@ public class GestionadorDeJuegoCronometrado : MonoBehaviour
         }
 
         return listaABarajar;
+    }
+
+    public string[] getOpcionCorrecta(){
+        return opcionCorrecta;
     }
 
 }
