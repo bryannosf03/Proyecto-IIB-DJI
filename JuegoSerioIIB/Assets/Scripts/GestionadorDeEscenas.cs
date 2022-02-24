@@ -22,4 +22,9 @@ public class GestionadorDeEscenas : MonoBehaviour
     public string getEscena(){
         return escenaActual;
     }
+
+    public void Salir(){
+        Application.Quit();
+    }
+
 }
