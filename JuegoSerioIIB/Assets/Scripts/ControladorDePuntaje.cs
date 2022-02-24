@@ -113,49 +113,54 @@ public class ControladorDePuntaje : MonoBehaviour
     }
 
     public void powerUp5050() {
+        string opcionCorrecta="";
+        int contador=0;
         
         if(GestionadorDeEscenas.Instancia.getEscena().Equals("ModoContrareloj")){
-            int contador=0;
+
+            opcionCorrecta=GestionadorDeJuegoCronometrado.Instancia.getOpcionCorrecta()[0];
+
             if(!(Asignador.Instancia.boton1.GetComponentInChildren<Text>().text
-            .Equals(GestionadorDeJuegoCronometrado.Instancia.getOpcionCorrecta()))&&contador<2){
-                Debug.Log(Asignador.Instancia.boton1.GetComponentInChildren<Text>().text.Equals(GestionadorDeJuegoCronometrado.Instancia.getOpcionCorrecta()));
+            .Equals(opcionCorrecta))&&contador<2){
+                Debug.Log(Asignador.Instancia.boton1.GetComponentInChildren<Text>().text.Equals(opcionCorrecta));
                 Asignador.Instancia.mostrarOpcion(Asignador.Instancia.boton1,"");
                 contador++;
             }
             if(!(Asignador.Instancia.boton2.GetComponentInChildren<Text>().text
-            .Equals(GestionadorDeJuegoCronometrado.Instancia.getOpcionCorrecta()))&&contador<2){
+            .Equals(opcionCorrecta))&&contador<2){
                 Asignador.Instancia.mostrarOpcion(Asignador.Instancia.boton2,"");
                 contador++;
             }
             if(!(Asignador.Instancia.boton3.GetComponentInChildren<Text>().text
-            .Equals(GestionadorDeJuegoCronometrado.Instancia.getOpcionCorrecta()))&&contador<2){
+            .Equals(opcionCorrecta))&&contador<2){
                 Asignador.Instancia.mostrarOpcion(Asignador.Instancia.boton3,"");
                 contador++;
             }
             if(!(Asignador.Instancia.boton4.GetComponentInChildren<Text>().text
-            .Equals(GestionadorDeJuegoCronometrado.Instancia.getOpcionCorrecta()))&&contador<2){
+            .Equals(opcionCorrecta))&&contador<2){
                 Asignador.Instancia.mostrarOpcion(Asignador.Instancia.boton4,"");
                 contador++;
             }
         }else{
-            int contador=0;
+            
+            opcionCorrecta=GestionadorDeJuegoNormal.Instancia.getOpcionCorrecta()[0];
             if(!(Asignador.Instancia.boton1.GetComponentInChildren<Text>().text
-            .Equals(GestionadorDeJuegoNormal.Instancia.getOpcionCorrecta()))&&contador<2){
+            .Equals(opcionCorrecta))&&contador<2){
                 Asignador.Instancia.mostrarOpcion(Asignador.Instancia.boton1,"");
                 contador++;
             }
             if(!(Asignador.Instancia.boton2.GetComponentInChildren<Text>().text
-            .Equals(GestionadorDeJuegoNormal.Instancia.getOpcionCorrecta()))&&contador<2){
+            .Equals(opcionCorrecta))&&contador<2){
                 Asignador.Instancia.mostrarOpcion(Asignador.Instancia.boton2,"");
                 contador++;
             }
             if(!(Asignador.Instancia.boton3.GetComponentInChildren<Text>().text
-            .Equals(GestionadorDeJuegoNormal.Instancia.getOpcionCorrecta()))&&contador<2){
+            .Equals(opcionCorrecta))&&contador<2){
                 Asignador.Instancia.mostrarOpcion(Asignador.Instancia.boton3,"");
                 contador++;
             }
             if(!(Asignador.Instancia.boton4.GetComponentInChildren<Text>().text
-            .Equals(GestionadorDeJuegoNormal.Instancia.getOpcionCorrecta()))&&contador<2){
+            .Equals(opcionCorrecta))&&contador<2){
                 Asignador.Instancia.mostrarOpcion(Asignador.Instancia.boton4,"");
                 contador++;
             }
