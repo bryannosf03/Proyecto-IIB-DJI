@@ -55,7 +55,7 @@ public class ControladorDePuntaje : MonoBehaviour
         verificarRacha();
 
         // Color
-        //colorCubo.material.SetColor("_Color",Color.green);
+        colorCubo.material.SetColor("_Color",Color.green);
 
         //Sonido
         fuenteSonido.clip = clipCorrecto;
@@ -70,13 +70,17 @@ public class ControladorDePuntaje : MonoBehaviour
         }
         Asignador.Instancia.mostrarPuntaje(textoPuntaje);
         contadorRacha=0;
-        
+
+        // Color
+        colorCubo.material.SetColor("_Color",Color.red);
+
         //Sonido
         fuenteSonido.clip = clipIncorrecto;
         fuenteSonido.Play();   
     }
 
     public void verificarRacha(){
+        colorCubo.material.SetColor("_Color", Color.white);
         if(contadorRacha==5){
             getPowerUp();
             spriteRenderer.sprite = Resources.Load<Sprite>(powerUpActual);
