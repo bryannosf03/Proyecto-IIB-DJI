@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class ControladorDePuntaje : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class ControladorDePuntaje : MonoBehaviour
     public SpriteRenderer spriteRenderer;
 
     // Colores
-    public Image colorCubo;
+    public GameObject panel;
 
     // Variables de Sonido
     public AudioSource fuenteSonido;
@@ -38,6 +39,7 @@ public class ControladorDePuntaje : MonoBehaviour
     
     void Start()
     {
+        panel = GameObject.Find("PanelJuego");
         powerUpActual="";
         contadorRacha=0;
         Instancia=this;
@@ -55,7 +57,8 @@ public class ControladorDePuntaje : MonoBehaviour
         verificarRacha();
 
         // Color
-        colorCubo.material.SetColor("_Color",Color.green);
+        panel.GetComponent<Image>().color = Color.green;
+        StartCoroutine(cambiarColor());
 
         //Sonido
         fuenteSonido.clip = clipCorrecto;
@@ -72,7 +75,8 @@ public class ControladorDePuntaje : MonoBehaviour
         contadorRacha=0;
 
         // Color
-        colorCubo.material.SetColor("_Color",Color.red);
+        panel.GetComponent<Image>().color = Color.red;
+        StartCoroutine(cambiarColor());
 
         //Sonido
         fuenteSonido.clip = clipIncorrecto;
@@ -80,7 +84,6 @@ public class ControladorDePuntaje : MonoBehaviour
     }
 
     public void verificarRacha(){
-        colorCubo.material.SetColor("_Color", Color.white);
         if(contadorRacha==5){
             getPowerUp();
             spriteRenderer.sprite = Resources.Load<Sprite>(powerUpActual);
@@ -94,6 +97,16 @@ public class ControladorDePuntaje : MonoBehaviour
             
         }
     }
+
+
+
+    // 
+        IEnumerator cambiarColor()  
+        {
+            yield return new WaitForSeconds(0.5f);
+            panel.GetComponent<Image>().color = Color.grey;
+        }
+    
 
     //de manera randómica nos devuelve un power up
     public void getPowerUp(){
