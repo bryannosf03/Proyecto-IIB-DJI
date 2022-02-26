@@ -15,7 +15,7 @@ public class ControladorDePuntaje : MonoBehaviour
     //numero de preguntas respondidas en este instante
     public static int preguntasRespondidas=1;
 
-    //si lelga a cino doy un power up
+    //si llega a cinco doy un power up
     int contadorRacha;
 
     //powerUp actual
@@ -25,7 +25,14 @@ public class ControladorDePuntaje : MonoBehaviour
     public Text textoNumeroDePreguntas;
     public SpriteRenderer spriteRenderer;
 
-    
+    // Colores
+    public Image colorCubo;
+
+    // Variables de Sonido
+    public AudioSource fuenteSonido;
+    public AudioClip clipCorrecto;
+    public AudioClip clipIncorrecto;
+
     //creo una instacia singleton
     public static ControladorDePuntaje Instancia;
     
@@ -46,16 +53,27 @@ public class ControladorDePuntaje : MonoBehaviour
         contadorRacha=contadorRacha + 1 ;
         Debug.Log(contadorRacha);
         verificarRacha();
+
+        // Color
+        //colorCubo.material.SetColor("_Color",Color.green);
+
+        //Sonido
+        fuenteSonido.clip = clipCorrecto;
+        fuenteSonido.Play();   
     }
 
     public void puntuarRespuestaIncorrecta () {
         puntajeActual=puntajeActual-4;
+        preguntasRespondidas++;
         if(puntajeActual<0){
             puntajeActual=0;
         }
-        preguntasRespondidas++;
         Asignador.Instancia.mostrarPuntaje(textoPuntaje);
         contadorRacha=0;
+        
+        //Sonido
+        fuenteSonido.clip = clipIncorrecto;
+        fuenteSonido.Play();   
     }
 
     public void verificarRacha(){

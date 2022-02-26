@@ -39,6 +39,12 @@ public class Asignador : MonoBehaviour
         imagenUI.sprite = banderaACambiar;
     }
 
+    // Cambiar Color Panel Correcta
+    public void cambiarPanel(Image panel, Sprite color){
+        panel.sprite = color;
+    }
+
+
     public void mostrarPuntaje(Text textPuntaje){
         textPuntaje.text = ControladorDePuntaje.puntajeActual+"";
     }
