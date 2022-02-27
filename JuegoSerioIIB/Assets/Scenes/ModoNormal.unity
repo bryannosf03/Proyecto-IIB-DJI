@@ -1670,6 +1670,8 @@ MonoBehaviour:
   boton2: {fileID: 0}
   boton3: {fileID: 0}
   boton4: {fileID: 0}
+  canvasGameObject: {fileID: 0}
+  canvas: {fileID: 0}
 --- !u!4 &1628011302
 Transform:
   m_ObjectHideFlags: 0
@@ -2047,7 +2049,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 112.55, y: -22}
+  m_AnchoredPosition: {x: 112.55002, y: -22}
   m_SizeDelta: {x: 46, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1760485999
@@ -2353,7 +2355,7 @@ MonoBehaviour:
   textoPuntaje: {fileID: 1760485999}
   textoNumeroDePreguntas: {fileID: 807930124}
   spriteRenderer: {fileID: 2118422495}
-  imagen: {fileID: 0}
+  panel: {fileID: 0}
   fuenteSonido: {fileID: 2118422496}
   clipCorrecto: {fileID: 8300000, guid: 2294e95fa72e9db4199987b3f6466b8f, type: 3}
   clipIncorrecto: {fileID: 8300000, guid: d281bee41d01c1a478403e3f2acc8715, type: 3}
@@ -2752,7 +2754,7 @@ GameObject:
   - component: {fileID: 2147363669}
   m_Layer: 5
   m_Name: CanvasMenu
-  m_TagString: Untagged
+  m_TagString: CanvasMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

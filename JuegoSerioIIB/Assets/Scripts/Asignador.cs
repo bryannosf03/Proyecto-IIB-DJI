@@ -9,6 +9,10 @@ public class Asignador : MonoBehaviour
     public GameObject boton2;
     public GameObject boton3;
     public GameObject boton4;
+    public GameObject canvasGameObject;
+
+    public Canvas canvas;
+
 
     //creo una instacia singleton
     public static Asignador Instancia;
@@ -19,6 +23,8 @@ public class Asignador : MonoBehaviour
         boton2 = GameObject.Find("Opcion2");
         boton3 = GameObject.Find("Opcion3");
         boton4 = GameObject.Find("Opcion4");
+        canvasGameObject =  GameObject.FindGameObjectsWithTag("CanvasMenu")[0];
+        canvas = canvasGameObject.GetComponent<Canvas>();
     }
 
     //método para mezclar y mostrar opciones en los botones
@@ -37,6 +43,12 @@ public class Asignador : MonoBehaviour
     //gameobject donde cambiaremos la imágen y la imagen de la bandera a cambiar
     public void mostrarBandera(Image imagenUI, Sprite banderaACambiar){
         imagenUI.sprite = banderaACambiar;
+    }
+
+      //método para cambiar la imágen de fondo
+    //gameobject donde cambiaremos la imágen y la imagen de la bandera a cambiar
+    public void mostrarContinente(Sprite spriterenderer){
+        canvas.GetComponent<Image>().sprite = spriterenderer;
     }
 
     // Cambiar Color Panel Correcta
@@ -61,4 +73,6 @@ public class Asignador : MonoBehaviour
     public void mostrarPreguntasRespondidasSinTotal(Text textPreguntasRespondidas){
         textPreguntasRespondidas.text = ""+ControladorDePuntaje.preguntasRespondidas;
     }
+
+
 }

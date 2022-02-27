@@ -16,29 +16,53 @@ public class GestionadorDeJuegoNormal : MonoBehaviour
 
     //creo una instacia singleton
     public static GestionadorDeJuegoNormal Instancia;
-        
-    void Start(){
-        Instancia=this;
-        switch (Continentes.nivelSeleccionado) {
+
+    void Start()
+    {
+        Instancia = this;
+        switch (Continentes.nivelSeleccionado)
+        {
             case 0:
-               nivelActual=Continentes.America;
-               break;
+                {
+                    nivelActual = Continentes.America;
+                    obtenerFondo(0);
+                    break;
+                }
             case 1:
-               nivelActual=Continentes.Europa;
-               break;
+                {
+                    nivelActual = Continentes.Europa;
+                    obtenerFondo(1);
+                    break;
+                }
             case 2:
-               nivelActual=Continentes.Asia;
-               break;
+                {
+                    nivelActual = Continentes.Asia;
+                    obtenerFondo(2);
+                    break;
+                }
+
             case 3:
-               nivelActual=Continentes.Africa;
-               break;
+                {
+                    nivelActual = Continentes.Africa;
+                    obtenerFondo(3);
+                    break;
+                }
+
             case 4:
-               nivelActual=Continentes.Oceania;
-               break;
-           default :
-               nivelActual=Continentes.Oceania;
-               break;
-       }
+                {
+                    nivelActual = Continentes.Oceania;
+                    obtenerFondo(4);
+                    break;
+                }
+
+            default:
+                {
+                    nivelActual = Continentes.Oceania;
+                    obtenerFondo(4);
+                    break;
+                }
+
+        }
         inicializarJuego();
     }
 
@@ -46,14 +70,28 @@ public class GestionadorDeJuegoNormal : MonoBehaviour
     public void inicializarJuego()
     {
         obtenerBandera();
+        //obtenerFondo(3);
         string[] opciones = seleccionarOpciones();
         Asignador.Instancia.mostrarOpciones(opciones);
     }
 
-    public void finalizarJuego(){
+    public void finalizarJuego()
+    {
         ControladorDePuntaje.Instancia.activarPowerUp();
         //TODO mostrar tabla de puntajes
     }
+
+    //Mostrar fondo de pantall
+    public void obtenerFondo(int opcion)
+    {
+        string[] continentes = { "América", "Europa", "Asia", "África", "Oceanía" };
+        string continente = continentes[opcion];
+        spriteRenderer.sprite = Resources.Load<Sprite>(continente);
+        Asignador.Instancia.mostrarContinente(spriteRenderer.sprite);
+        Debug.Log(continente);
+    }
+
+
     //leer sprites(banderas) de la carpeta de assets según el nivel
     public void obtenerBandera()
     {
@@ -80,35 +118,40 @@ public class GestionadorDeJuegoNormal : MonoBehaviour
         indicesDeOpciones[0] = int.Parse(opcionCorrecta[1]);
 
         bool flag = false;
-        int indiceAuxiliar=1;
+        int indiceAuxiliar = 1;
         int randomicoAuxiliar;
-        do{
+        do
+        {
             randomicoAuxiliar = Random.Range(0, nivelActual.Length);
 
             //verifico que no se repita en todo el arreglo
-            for (int j = 0; j < 4; j++){
-                if(randomicoAuxiliar==indicesDeOpciones[j]){//si se repite cambio la flag a false y salgo
+            for (int j = 0; j < 4; j++)
+            {
+                if (randomicoAuxiliar == indicesDeOpciones[j])
+                {//si se repite cambio la flag a false y salgo
                     flag = true;
                     //Debug.Log("Igual" +randomicoAuxiliar+" - indice "+flag);
                     break;
                 }
                 else //por el contrario la mantengo en verdadera
                     flag = false;
-                
+
             }
 
             //Debug.Log(indiceAuxiliar);
-            if(indiceAuxiliar<4 & !flag){
-                flag=true;
+            if (indiceAuxiliar < 4 & !flag)
+            {
+                flag = true;
                 //solo si pasó sin novedades, entonces asigno y continuamos con el siguiente índice
-                if(flag){
+                if (flag)
+                {
                     //Debug.Log("indice" +indiceAuxiliar+" - indice "+flag);
-                    indicesDeOpciones[indiceAuxiliar]=randomicoAuxiliar;
+                    indicesDeOpciones[indiceAuxiliar] = randomicoAuxiliar;
                     indiceAuxiliar++;
                 }
             }
-            
-        }while(flag);
+
+        } while (flag);
         //Debug.Log(indicesDeOpciones[0]+"-"+indicesDeOpciones[1]+"-"+indicesDeOpciones[2]+"-"+indicesDeOpciones[3]);
         indicesDeOpciones = BarajarOrdenDeArray(indicesDeOpciones, 0);
 
@@ -125,36 +168,39 @@ public class GestionadorDeJuegoNormal : MonoBehaviour
     public void verificarRespuesta(Text respuesta)
     {
         //verifico  el número de preguntas
-        if(ControladorDePuntaje.preguntasRespondidas<ControladorDePuntaje.numeroDePreguntasTotal)
-        {    
+        if (ControladorDePuntaje.preguntasRespondidas < ControladorDePuntaje.numeroDePreguntasTotal)
+        {
             if (respuesta.text.Equals(opcionCorrecta[0]))
             {
                 ControladorDePuntaje.Instancia.puntuarRespuestaCorrecta();
                 Asignador.Instancia.mostrarPreguntasRespondidas(ControladorDePuntaje.Instancia.textoNumeroDePreguntas);
                 inicializarJuego();
             }
-            else{
+            else
+            {
                 ControladorDePuntaje.Instancia.puntuarRespuestaIncorrecta();
                 Asignador.Instancia.mostrarPreguntasRespondidas(ControladorDePuntaje.Instancia.textoNumeroDePreguntas);
                 inicializarJuego();
             }
         }
-        else if(ControladorDePuntaje.preguntasRespondidas==ControladorDePuntaje.numeroDePreguntasTotal)
-        {    
+        else if (ControladorDePuntaje.preguntasRespondidas == ControladorDePuntaje.numeroDePreguntasTotal)
+        {
             if (respuesta.text.Equals(opcionCorrecta[0]))
             {
                 ControladorDePuntaje.Instancia.puntuarRespuestaCorrecta();
                 finalizarJuego();
             }
-            else{
+            else
+            {
                 ControladorDePuntaje.Instancia.puntuarRespuestaIncorrecta();
                 finalizarJuego();
             }
         }
-        else{
+        else
+        {
             finalizarJuego();
         }
-        
+
     }
 
     //retornar array randomizado
@@ -171,7 +217,8 @@ public class GestionadorDeJuegoNormal : MonoBehaviour
         return listaABarajar;
     }
 
-    public string[] getOpcionCorrecta(){
+    public string[] getOpcionCorrecta()
+    {
         return opcionCorrecta;
     }
 
