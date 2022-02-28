@@ -37,8 +37,7 @@ public class GameHandler : MonoBehaviour {
 
     public void ordernar(){
         entries2 = FileHandler.ReadListFromJSON<InputEntry> (filename);
-        int puntos=0;
-        string nombre="";
+      
 
         for (int i = 0; i < entries2.Count-1; i++){
             for (int j = 0; j < entries2.Count - i - 1; j++){

@@ -10,7 +10,7 @@ public class InputHandler : MonoBehaviour {
     List<InputEntry> entries = new List<InputEntry> ();
     List<InputEntry> entries2 = new List<InputEntry> ();
 
-    public static string name;
+   
 
 
     private void Start () {
@@ -20,7 +20,7 @@ public class InputHandler : MonoBehaviour {
 
     public void AddNameToList () {
         
-        entries.Add (new InputEntry (nameInput.text, Random.Range (0, 100)));
+        entries.Add (new InputEntry (nameInput.text,0));
         nameInput.text = "";
 
         FileHandler.SaveToJSON<InputEntry> (entries, filename);
