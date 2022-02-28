@@ -17,6 +17,12 @@ public class GestionadorDeJuegoCronometrado : MonoBehaviour
     //creo una instacia singleton
     public static GestionadorDeJuegoCronometrado Instancia;
     
+
+
+    //tabla de puntajes
+    [SerializeField] HighscoreHandler highscoreHandler;
+    [SerializeField] string playerName;
+    
     void Start(){
         Instancia=this;
         nivelActual = Continentes.Mundo;
@@ -34,6 +40,7 @@ public class GestionadorDeJuegoCronometrado : MonoBehaviour
     public void finalizarJuego()
     {
         ControladorDePuntaje.Instancia.activarPowerUp();
+      
         //TODO mostrar tabla de puntajes
     }
     //leer sprites(banderas) de la carpeta de assets según el nivel

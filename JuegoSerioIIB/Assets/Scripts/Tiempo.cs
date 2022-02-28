@@ -10,8 +10,12 @@ public class Tiempo: MonoBehaviour
     bool tiempoEstaCorriendo = false;
     public Text textoTiempo;
 
+
+
     public static Tiempo Instancia;
 
+
+   
     private void Start()
     {
         Instancia=this;
@@ -35,6 +39,7 @@ public class Tiempo: MonoBehaviour
                 finalizarJuego();
             }
         }
+        
     }
     void mostrarTiempo(float tiempoAMostrar)
     {
