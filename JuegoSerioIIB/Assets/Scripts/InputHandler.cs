@@ -6,13 +6,16 @@ public class InputHandler : MonoBehaviour {
     [SerializeField] public InputField nameInput;
     [SerializeField]  string filename;
 
+
     List<InputEntry> entries = new List<InputEntry> ();
+    List<InputEntry> entries2 = new List<InputEntry> ();
 
     public static string name;
 
 
     private void Start () {
         entries = FileHandler.ReadListFromJSON<InputEntry> (filename);
+
     }
 
     public void AddNameToList () {
@@ -21,6 +24,7 @@ public class InputHandler : MonoBehaviour {
         nameInput.text = "";
 
         FileHandler.SaveToJSON<InputEntry> (entries, filename);
+
     }
 
    /* public void AddNameToList (string nombre, int puntos) {

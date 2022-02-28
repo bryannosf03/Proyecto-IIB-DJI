@@ -78,7 +78,9 @@ public class GestionadorDeJuegoNormal : MonoBehaviour
     public void finalizarJuego()
     {
         ControladorDePuntaje.Instancia.activarPowerUp();
+        //SceneManager.LoadScene("TablaDePuntajes");
         //TODO mostrar tabla de puntajes
+        GestionadorDeEscenas.Instancia.cargarEscena("TablaDePuntajes");
     }
 
     //Mostrar fondo de pantall

@@ -33,18 +33,16 @@ public class HighscoreHandler : MonoBehaviour {
     public void AddHighscoreIfPossible (HighscoreElement element) {
         for (int i = 0; i < maxCount; i++) {
             if (i >= highscoreList.Count || element.points > highscoreList[i].points) {
-                // add new high score
-               // highscoreList.Insert (i, element);
 
                 while (highscoreList.Count > maxCount) {
                     highscoreList.RemoveAt (maxCount);
                 }
 
-                //SaveHighscore ();
-
                 if (onHighscoreListChanged != null) {
                     onHighscoreListChanged.Invoke (highscoreList);
                 }
+
+
 
                 break;
             }

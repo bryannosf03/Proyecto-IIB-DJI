@@ -40,6 +40,8 @@ public class GestionadorDeJuegoCronometrado : MonoBehaviour
     public void finalizarJuego()
     {
         ControladorDePuntaje.Instancia.activarPowerUp();
+       // SceneManager.LoadScene("TablaDePuntajes");
+       GestionadorDeEscenas.Instancia.cargarEscena("TablaDePuntajes");
       
         //TODO mostrar tabla de puntajes
     }

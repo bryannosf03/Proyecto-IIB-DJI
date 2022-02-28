@@ -32,14 +32,14 @@ public class HighscoreUI : MonoBehaviour {
 
             if (el != null && el.points > 0) {
                 if (i >= uiElements.Count) {
-                    // instantiate new entry
+                    // Instanciamos una nueva entrada
                     var inst = Instantiate (highscoreUIElementPrefab, Vector3.zero, Quaternion.identity);
                     inst.transform.SetParent (elementWrapper, false);
 
                     uiElements.Add (inst);
                 }
 
-                // write or overwrite name & points
+                // Escribimos el nuevo nombre y puntaje
                 var texts = uiElements[i].GetComponentsInChildren<Text> ();
                 texts[0].text = el.playerName;
                 texts[1].text = el.points.ToString ();
