@@ -10,7 +10,7 @@ public class InputHandler : MonoBehaviour {
     List<InputEntry> entries = new List<InputEntry> ();
     List<InputEntry> entries2 = new List<InputEntry> ();
 
-   
+    public static string name;
 
 
     private void Start () {

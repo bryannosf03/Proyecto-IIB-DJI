@@ -41,9 +41,6 @@ public class HighscoreHandler : MonoBehaviour {
                 if (onHighscoreListChanged != null) {
                     onHighscoreListChanged.Invoke (highscoreList);
                 }
-
-
-
                 break;
             }
         }
