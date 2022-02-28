@@ -49,3 +49,11 @@
 {"nombre":"local","puntuacion":0}
 {"nombre":"Luismi","puntuacion":0}
 {"nombre":"sdsadsa","puntuacion":0}
+{"nombre":"rodrigo","puntuacion":0}
+{"nombre":"Hola","puntuacion":0}
+{"nombre":"Alisson","puntuacion":0}
+{"nombre":"Enero","puntuacion":0}
+{"nombre":"asdasds","puntuacion":0}
+{"nombre":"Febrero","puntuacion":0}
+{"nombre":"marzo","puntuacion":0}
+{"nombre":"Diciembre","puntuacion":0}

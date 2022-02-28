@@ -18,17 +18,23 @@ public class GameHandler : MonoBehaviour {
         //inputHandler.AddNameToList(playerName,ControladorDePuntaje.puntajeActual)
 
         entries = FileHandler.ReadListFromJSON<InputEntry> (filename);
+      
         string nombre = entries[entries.Count - 1].playerName;
-        entries[entries.Count - 1].points=ControladorDePuntaje.puntajeActual;
+        entries[entries.Count - 1].points= ControladorDePuntaje.puntajeActual;
 
-        string path = Application.persistentDataPath + "/" + filename;
-       
+      string path = Application.persistentDataPath + "/" + filename;
+//       Debug.Log("Path secujndario"+path);
+       FileStream fileStream = File.Open(path, FileMode.Open); 
+       fileStream.SetLength(0); 
+       fileStream.Close(); 
+
+
 
         System.IO.File.WriteAllText(path,string.Empty);
 
 
         FileHandler.SaveToJSON<InputEntry> (entries, filename);
-        //highscoreHandler.AddHighscoreIfPossible (new HighscoreElement (nombre, ControladorDePuntaje.puntajeActual));
+        highscoreHandler.AddHighscoreIfPossible (new HighscoreElement (nombre, ControladorDePuntaje.puntajeActual));
         Debug.Log("Accede al gamehandler");
     }
 }
