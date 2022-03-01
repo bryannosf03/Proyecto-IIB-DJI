@@ -852,7 +852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ecf5e4b67ced64f9d0e6e323b317dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoFaltante: 30
+  tiempoFaltante: 20
   textoTiempo: {fileID: 204123996}
 --- !u!4 &327738187
 Transform:
