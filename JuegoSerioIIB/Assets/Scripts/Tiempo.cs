@@ -10,6 +10,7 @@ public class Tiempo: MonoBehaviour
     bool tiempoEstaCorriendo = false;
     public Text textoTiempo;
 
+    float contadorDeTiempo;
 
 
     public static Tiempo Instancia;
@@ -19,12 +20,15 @@ public class Tiempo: MonoBehaviour
     private void Start()
     {
         Instancia=this;
+        contadorDeTiempo=0;
         tiempoEstaCorriendo = true;
     }
 
     void Update()
     {
-        if (tiempoEstaCorriendo)
+
+        contadorDeTiempo+= Time.deltaTime;
+        if (tiempoEstaCorriendo && textoTiempo!=null)
         {
             if (tiempoFaltante > 0)
             {
@@ -33,7 +37,6 @@ public class Tiempo: MonoBehaviour
             }
             else
             {
-                Debug.Log("El tiempo se acabó");
                 tiempoFaltante = 0;
                 tiempoEstaCorriendo = false;
                 finalizarJuego();
@@ -53,8 +56,12 @@ public class Tiempo: MonoBehaviour
         tiempoFaltante=tiempoFaltante+tiempoAAumentar;
     }
 
-    public void decrementarTiempo(float tiempoADecrementar){
-        
+    public void resetTiempo(){
+        contadorDeTiempo=0;
+    }
+
+    public float getTiempo(){
+        return contadorDeTiempo;
     }
 
     public void finalizarJuego()
