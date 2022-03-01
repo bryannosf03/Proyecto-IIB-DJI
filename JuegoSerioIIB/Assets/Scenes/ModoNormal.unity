@@ -2355,8 +2355,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 2118422495}
   imagen: {fileID: 0}
   fuenteSonido: {fileID: 2118422496}
-  clipCorrecto: {fileID: 8300000, guid: 2294e95fa72e9db4199987b3f6466b8f, type: 3}
-  clipIncorrecto: {fileID: 8300000, guid: d281bee41d01c1a478403e3f2acc8715, type: 3}
+  clipCorrecto: {fileID: 8300000, guid: d95665f21dc23e24d97e180d63ae0346, type: 3}
+  clipIncorrecto: {fileID: 8300000, guid: 9d6cce7103ed0f74a8f0f5ed5eeba4b6, type: 3}
 --- !u!4 &2118422494
 Transform:
   m_ObjectHideFlags: 0
@@ -2436,7 +2436,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2892,9 +2892,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
+<<<<<<< Updated upstream
   m_audioClip: {fileID: 8300000, guid: fb376e79062e6f94bbe114232aa782ab, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
+=======
+  m_audioClip: {fileID: 8300000, guid: dc49b6ab24c496141b77a23fd145bda3, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.75
+>>>>>>> Stashed changes
   m_Pitch: 1
   Loop: 1
   Mute: 0
