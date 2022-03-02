@@ -279,6 +279,14 @@ public class ControladorDePuntaje : MonoBehaviour
         Tiempo.Instancia.aumentarTiempo(10);
         powerUpActual = "";
     }
-
+    
+    public void resetearControladorPuntaje(){
+        powerUpActual = "";
+        contadorRacha = 0;
+        numeroDePreguntasTotal = 25;
+        preguntasRespondidas = 1;
+        puntajeActual = 0;
+    }
+    
 
 }

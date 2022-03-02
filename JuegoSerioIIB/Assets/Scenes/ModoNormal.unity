@@ -667,7 +667,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 1.1000061, y: 0.000015258789}
-  m_SizeDelta: {x: 53.82, y: 30}
+  m_SizeDelta: {x: 53.985, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &807930124
 MonoBehaviour:
@@ -1597,6 +1597,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: ModoNormalNiveles
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2118422493}
+        m_TargetAssemblyTypeName: ControladorDePuntaje, Assembly-CSharp
+        m_MethodName: resetearControladorPuntaje
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1612069027

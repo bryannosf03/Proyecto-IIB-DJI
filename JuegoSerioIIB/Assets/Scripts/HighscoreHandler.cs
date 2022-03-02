@@ -11,7 +11,7 @@ public class HighscoreHandler : MonoBehaviour {
     public static event OnHighscoreListChanged onHighscoreListChanged;
 
     private void Start () {
-        LoadHighscores ();
+        
     }
 
     private void LoadHighscores () {
@@ -44,6 +44,7 @@ public class HighscoreHandler : MonoBehaviour {
                 break;
             }
         }
+        LoadHighscores ();
     }
 
 }
